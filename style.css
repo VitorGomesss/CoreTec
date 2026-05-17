@@ -930,6 +930,142 @@ a {
 }
 
 /* =========================================
+   CONTATO (INICIE SEU PROJETO)
+   ========================================= */
+.contact-cyber {
+    padding: 100px 5%;
+    background-color: var(--bg-deep);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info h2 {
+    font-family: var(--font-title);
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #FFF;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.contact-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.contact-icon {
+    color: var(--neon-cyan);
+    background: rgba(0, 242, 254, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-text h4 {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    color: #FFF;
+    margin-bottom: 0.25rem;
+}
+
+.contact-text p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* Formulário Glassmorphism */
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 242, 254, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.01);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px 8px 0 0;
+    padding: 1rem;
+    color: #FFF;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+    outline: none;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form select option {
+    background: var(--bg-deep);
+    color: #FFF;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-bottom: 1px solid var(--neon-cyan);
+    background: rgba(0, 242, 254, 0.03);
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.1);
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.05rem;
+}
+
+/* =========================================
    FOOTER AVANÇADO (HUB DE CONTATO)
    ========================================= */
 .footer-advanced {
@@ -1055,6 +1191,11 @@ a {
         gap: 3rem;
     }
     
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -1085,6 +1226,14 @@ a {
     .hero-cyber {
         padding-top: 240px;
         padding-bottom: 80px;
+    }
+
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+    
+    .contact-cyber {
+        padding: 80px 5%;
     }
 
     .footer-grid {
