@@ -726,6 +726,108 @@ a {
 }
 
 /* =========================================
+   SOBRE O LABORATÓRIO
+   ========================================= */
+.about-cyber {
+    padding: 120px 0;
+    background-color: var(--bg-deep);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.about-container-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.about-content {
+    background: rgba(15, 15, 20, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--border-glass);
+    border-color: rgba(139, 92, 246, 0.3);
+    border-radius: 24px;
+    padding: 4.5rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(139, 92, 246, 0.05);
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.about-content .cyber-corner {
+    border-color: var(--neon-purple);
+    opacity: 0.6;
+}
+
+.about-content h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    color: #FFF;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.about-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2.5rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-number {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* =========================================
    AVALIAÇÕES (PROVA SOCIAL)
    ========================================= */
 .testimonials-cyber {
