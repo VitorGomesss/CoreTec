@@ -1,0 +1,570 @@
+/* =========================================
+   VARIÁVEIS GERAIS (DESIGN SYSTEM - DARK TECH)
+   ========================================= */
+:root {
+    /* Cores do Tema */
+    --bg-deep: #080808;
+    --bg-card: rgba(15, 15, 20, 0.6);
+    --text-primary: #E0E0E0;
+    --text-muted: #8E929E;
+    
+    /* Degradê Elétrico */
+    --grad-electric: linear-gradient(135deg, #8B5CF6 0%, #00F2FE 100%);
+    --neon-purple: #8B5CF6;
+    --neon-cyan: #00F2FE;
+    
+    /* Tipografia */
+    --font-title: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    
+    /* Animações e Transições */
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.2s ease;
+    
+    /* Efeitos */
+    --border-glass: 1px solid rgba(255, 255, 255, 0.07);
+    --border-glass-glow: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+/* =========================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+::-webkit-scrollbar-thumb {
+    background: #1f1f2e;
+    border-radius: 4px;
+    border: 2px solid #050505;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-purple);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   BACKGROUND GLOW EFFECT (ORBS)
+   ========================================= */
+.cyber-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+.purple-glow {
+    width: 450px;
+    height: 450px;
+    background: var(--neon-purple);
+    top: -10%;
+    left: -5%;
+}
+
+.cyan-glow {
+    width: 500px;
+    height: 500px;
+    background: var(--neon-cyan);
+    bottom: 20%;
+    right: -10%;
+}
+
+/* =========================================
+   COMPONENTES: BOTÕES & ELEMENTOS COM DEGRADÊ
+   ========================================= */
+.gradient-text {
+    background: var(--grad-electric);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Botão Primário (Fundo Degradê com Glow) */
+.btn-primary-glow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    border-radius: 30px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    color: #050505;
+    background: var(--grad-electric);
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 242, 254, 0.5), 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+/* Botão Secundário (Borda Degradê com Glass) */
+.btn-outline-glow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    border-radius: 30px;
+    font-family: var(--font-title);
+    font-weight: 500;
+    background: linear-gradient(#080808, #080808) padding-box,
+                var(--grad-electric) border-box;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-size: 0.95rem;
+}
+
+.btn-outline-glow span {
+    background: var(--grad-electric);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition-fast);
+}
+
+.btn-outline-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn-outline-glow:hover span {
+    color: #FFF;
+    -webkit-text-fill-color: #FFF;
+}
+
+/* =========================================
+   HEADER (NAVBAR FLUTUANTE GLASSMORPHISM)
+   ========================================= */
+.header-floating {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition-smooth);
+}
+
+.header-container {
+    background: rgba(10, 10, 12, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--border-glass);
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: var(--grad-electric);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+/* Efeito de neon hover nos links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--grad-electric);
+    transition: var(--transition-smooth);
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Botão de Orçamento no Header (Borda Degradê) */
+.btn-header-cta {
+    background: linear-gradient(#080808, #080808) padding-box,
+                var(--grad-electric) border-box;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.btn-header-cta span {
+    background: var(--grad-electric);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+/* =========================================
+   HERO SECTION (A DOBRA TECNOLÓGICA)
+   ========================================= */
+.hero-cyber {
+    position: relative;
+    padding-top: 180px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Padrão de Circuito e Grade de fundo */
+.hero-bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-content {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Badge Tecnológico Superior */
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    background: rgba(139, 92, 246, 0.08);
+    border: var(--border-glass-glow);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--neon-cyan);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--neon-cyan);
+    position: relative;
+}
+
+.pulse-dot::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--neon-cyan);
+    animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.hero-content h1 {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #FFF;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.25rem;
+}
+
+/* Coluna Direita (Visual Conceitual Flutuante) */
+.hero-visual {
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 20px;
+    padding: 4px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(0, 242, 254, 0.2));
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8),
+                0 0 50px rgba(139, 92, 246, 0.1);
+    transition: var(--transition-smooth);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+    border: var(--border-glass);
+    transition: var(--transition-smooth);
+}
+
+/* Cantos estilizados tipo HUD cyberpunk */
+.cyber-corner {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-color: var(--neon-cyan);
+    border-style: solid;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: var(--transition-smooth);
+}
+
+.top-left {
+    top: -5px;
+    left: -5px;
+    border-width: 2px 0 0 2px;
+}
+
+.bottom-right {
+    bottom: -5px;
+    right: -5px;
+    border-width: 0 2px 2px 0;
+}
+
+.hero-image-container:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9),
+                0 0 60px rgba(0, 242, 254, 0.35);
+}
+
+.hero-image-container:hover .cyber-corner {
+    border-color: var(--neon-purple);
+    width: 20px;
+    height: 20px;
+}
+
+/* =========================================
+   FOOTER (DARK MINIMALIST TECH)
+   ========================================= */
+.footer-cyber {
+    background-color: #030303;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.tech-code {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--neon-purple);
+}
+
+.mono-value {
+    color: var(--neon-cyan);
+    font-weight: 500;
+}
+
+.footer-links-mono {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.footer-links-mono a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.footer-links-mono a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+}
+
+/* =========================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================= */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-floating {
+        top: 10px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        border-radius: 24px;
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-cyber {
+        padding-top: 240px;
+        padding-bottom: 80px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info {
+        align-items: center;
+    }
+
+    .footer-links-mono {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}

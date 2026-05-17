@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CoreTec - Laboratório de eletrônica avançada, diagnóstico preciso de alta performance e engenharia eletrônica de ponta.">
+    <title>CoreTec | Laboratório de Engenharia Eletrônica Avançada</title>
+    
+    <!-- Google Fonts: Poppins (Títulos) & Inter (Corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BACKGROUND GRID E EFEITOS NEON -->
+    <div class="cyber-glow-orb purple-glow"></div>
+    <div class="cyber-glow-orb cyan-glow"></div>
+
+    <!-- HEADER (NAVBAR FLUTUANTE GLASSMORPHISM) -->
+    <header class="header-floating">
+        <div class="container header-container">
+            <a href="#" class="logo">CoreTec</a>
+            <nav class="nav-links">
+                <a href="#servicos">Serviços</a>
+                <a href="#avaliacoes">Avaliações</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <a href="#orcamento" class="btn btn-header-cta">
+                <span>Pedir Orçamento</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION (A DOBRA TECNOLÓGICA) -->
+        <section class="hero-cyber">
+            <!-- Padrão SVG abstrato de linhas de circuito -->
+            <div class="hero-bg-grid">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                        </pattern>
+                        <linearGradient id="electric-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#8B5CF6" />
+                            <stop offset="100%" stop-color="#00F2FE" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                    <!-- Linhas de circuito abstratas -->
+                    <path d="M 100 150 L 250 150 L 300 200 L 300 400 L 380 480 L 600 480" fill="none" stroke="url(#electric-grad)" stroke-width="1" opacity="0.04" />
+                    <path d="M 900 100 L 1050 100 L 1100 150 L 1100 350 L 1180 430 L 1300 430" fill="none" stroke="url(#electric-grad)" stroke-width="1" opacity="0.04" />
+                    <circle cx="600" cy="480" r="3" fill="#00F2FE" opacity="0.15" />
+                    <circle cx="100" cy="150" r="3" fill="#8B5CF6" opacity="0.15" />
+                    <circle cx="900" cy="100" r="3" fill="#8B5CF6" opacity="0.15" />
+                </svg>
+            </div>
+
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="tech-badge">
+                        <span class="pulse-dot"></span>
+                        LABORATÓRIO DE ALTA PERFORMANCE
+                    </div>
+                    <h1>CoreTec: Onde a <span class="gradient-text">eletrônica</span> encontra o <span class="gradient-text">futuro</span>.</h1>
+                    <p>Especialistas em diagnóstico preciso, reparos avançados de placas de smartphones e instalação de refrigeração customizada para PCs de alta performance. Agilidade e transparência do início ao fim.</p>
+                    <div class="hero-buttons">
+                        <a href="#falar-tecnico" class="btn btn-primary-glow">Falar com Técnico</a>
+                        <a href="#ver-servicos" class="btn btn-outline-glow">
+                            <span>Ver Serviços</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <!-- Imagem 3D conceitual de hardware gerada -->
+                        <img src="images/hero-tech.png" alt="Renderização 3D conceitual de microchip de alta tecnologia" class="hero-image">
+                        <div class="cyber-corner top-left"></div>
+                        <div class="cyber-corner bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER BÁSICO (DARK MINIMALIST COM TOQUE MONO) -->
+    <footer class="footer-cyber">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <p class="copyright">&copy; 2026 CoreTec. // TODOS OS DIREITOS RESERVADOS.</p>
+                <p class="tech-code">CONTACT_EMAIL: <span class="mono-value">contato@coretec.com.br</span></p>
+            </div>
+            <div class="footer-links-mono">
+                <a href="#instagram" target="_blank" rel="noopener noreferrer">// INSTAGRAM</a>
+                <a href="#whatsapp" target="_blank" rel="noopener noreferrer">// WHATSAPP</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
