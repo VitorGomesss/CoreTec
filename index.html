@@ -23,13 +23,26 @@
     <header class="header-floating">
         <div class="container header-container">
             <a href="#" class="logo">CoreTec</a>
-            <nav class="nav-links">
+
+            <!-- Hamburger Button (Mobile Only) -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
                 <a href="#servicos">Serviços</a>
                 <a href="#alta-performance">Setups</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#avaliacoes">Avaliações</a>
+                <a href="#contato" class="btn btn-header-cta mobile-cta">
+                    <span>Pedir Orçamento</span>
+                </a>
+                <div class="mobile-tech-stamp">SYS.VER: 2.0.4 // SECURE CONNECTION</div>
             </nav>
-            <a href="#contato" class="btn btn-header-cta">
+
+            <a href="#contato" class="btn btn-header-cta desktop-cta">
                 <span>Pedir Orçamento</span>
             </a>
         </div>

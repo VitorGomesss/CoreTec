@@ -3,6 +3,32 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("CoreTec - Scripts carregados.");
 
     // ==========================================
+    // HAMBURGER MENU (MOBILE NAVIGATION)
+    // ==========================================
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (hamburgerBtn && navLinks) {
+        // Toggle do menu ao clicar no hamburger
+        hamburgerBtn.addEventListener('click', () => {
+            const isActive = navLinks.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+            hamburgerBtn.setAttribute('aria-expanded', isActive);
+            document.body.classList.toggle('menu-open', isActive);
+        });
+
+        // Regra de Ouro UX: fechar menu ao clicar em qualquer link
+        const menuLinks = navLinks.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
+    // ==========================================
     // INTERCEPTAÇÃO E ENVIO DO FORMULÁRIO (AJAX)
     // ==========================================
     const contactForm = document.querySelector("#contato .contact-form");
