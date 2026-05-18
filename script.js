@@ -56,4 +56,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 3000);
         });
     }
+
+    // ==========================================
+    // SCROLL REVEAL (INTERSECTION OBSERVER)
+    // ==========================================
+    const observerOptions = {
+        root: null,
+        // O valor negativo no bottom (-20%) cria uma "margem morta" no fundo da tela.
+        // Isso força o elemento a perder a classe (sumir) antes de encostar no final da tela ao rolar para cima.
+        rootMargin: "0px 0px -20% 0px", 
+        threshold: 0.15 // Dispara quando 15% do elemento estiver dentro da área útil
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Adiciona a classe quando o elemento entra na tela
+                entry.target.classList.add('show-scroll');
+            } else {
+                // Remove a classe quando o elemento sai da tela (animação repetível)
+                entry.target.classList.remove('show-scroll');
+            }
+        });
+    }, observerOptions);
+
+    // Seleciona todos os elementos que devem ser animados e pede para o observer monitorar
+    const hiddenElements = document.querySelectorAll('.hidden-scroll, .hidden-left, .hidden-right');
+    hiddenElements.forEach((el) => scrollObserver.observe(el));
 });
