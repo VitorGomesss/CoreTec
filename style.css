@@ -118,6 +118,7 @@ a {
 .gradient-text {
     background: var(--grad-electric);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
@@ -165,6 +166,7 @@ a {
 .btn-outline-glow span {
     background: var(--grad-electric);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: var(--transition-fast);
 }
@@ -211,6 +213,7 @@ a {
     letter-spacing: -0.5px;
     background: var(--grad-electric);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -266,6 +269,7 @@ a {
 .btn-header-cta span {
     background: var(--grad-electric);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
